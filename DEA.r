@@ -15,6 +15,7 @@ GDCdownload(query = query2,directory = "RES_DEA/")
 dataPrep <- GDCprepare(query = query2, save = TRUE, directory =  "RES_DEA/",save.filename = "RES_DEA/counts.rda", summarizedExperiment = TRUE)
 #Gene expression and visualization
 dataPrepro <- TCGAanalyze_Preprocessing(object = dataPrep,cor.cut = 0.6,datatype = "HTSeq - Counts")
+#I stopped executing the script here "no return" for TCGAanalyze_Preprocessing
 # normalization of genes. Other method: geneLength
 dataNormalized <- TCGAanalyze_Normalization(tabDF = dataPrepro,geneInfo=TCGAbiolinks::geneInfoHT,method="gcContent")
 # quantile filter of genes
